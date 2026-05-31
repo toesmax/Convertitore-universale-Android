@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Background circle for depth -->
+    <path
+        android:fillColor="#0284c7"
+        android:pathData="M54,18 C73.882,18 90,34.118 90,54 C90,73.882 73.882,90 54,90 C34.118,90 18,73.882 18,54 C18,34.118 34.118,18 54,18 Z" />
+
+    <!-- File icon 1 (Back left, white transparent) -->
+    <path
+        android:fillColor="#60a5fa"
+        android:pathData="M34,36 L52,36 L62,46 L62,76 L34,76 Z" />
+    <path
+        android:fillColor="#93c5fd"
+        android:pathData="M52,36 L52,46 L62,46 Z" />
+
+    <!-- File icon 2 (Front right, full white) -->
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M46,44 L64,44 L74,54 L74,84 L46,84 Z" />
+    <path
+        android:fillColor="#cbd5e1"
+        android:pathData="M64,44 L64,54 L74,54 Z" />
+
+    <!-- Conversion flow arrows (circular arrows in center-ish) -->
+    <path
+        android:fillColor="#0f172a"
+        android:pathData="M54,58 C51.239,58 49,55.761 49,53 C49,51.5 50.2,50.2 51.5,49 L48,49 L48,46 L56,46 L56,54 L53,54 C52.5,54 52,54.5 52,55 C52,56.1 52.9,57 54,57 C55.1,57 56,56.1 56,55 L59,55 C59,57.761 56.761,60 54,60 Z" />
+        
+</vector>
