@@ -327,7 +327,17 @@ class ConversionViewModel(application: Application) : AndroidViewModel(applicati
         withContext(Dispatchers.IO) {
             try {
                 val inputStream = context.contentResolver.openInputStream(uri) ?: return@withContext null
-                val tempFile = File(context.cacheDir, "source_$originalName")
+                
+                // Sanitize the temp file name to prevent spaces/special characters/parentheses from breaking WebView loadUrl
+                val ext = File(originalName).extension.lowercase()
+                val base = originalName.substringBeforeLast(".")
+                var sanitizedBase = base.replace(Regex("[^a-zA-Z0-9_-]"), "_")
+                if (sanitizedBase.trim().replace("_", "").isEmpty()) {
+                    sanitizedBase = "file_" + System.currentTimeMillis()
+                }
+                val safeName = "source_temp_" + sanitizedBase + if (ext.isNotEmpty()) "." + ext else ""
+                
+                val tempFile = File(context.cacheDir, safeName)
                 if (tempFile.exists()) {
                     tempFile.delete()
                 }
